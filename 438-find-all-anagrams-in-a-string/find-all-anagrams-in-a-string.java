@@ -1,5 +1,6 @@
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
+        //return indices
         List<Integer> ans = new ArrayList<>();
         int[] patfreq = new int[26];
         int[] winfreq = new int[26];
