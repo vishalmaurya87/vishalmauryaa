@@ -13,7 +13,7 @@ class Solution {
             }
             else{
                 v1= prevonedelete + arr[i];
-            }
+            }// onedelete =0 initialize,onedelete = Math.max(nodelete, onedelete + arr[i]);
             onedelete = Math.max(v1,prevnodelete);
             res = Math.max(res,Math.max(onedelete,nodelete));
         }
