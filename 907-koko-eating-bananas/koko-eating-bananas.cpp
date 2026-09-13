@@ -2,12 +2,13 @@ class Solution {
 public:
  long long fun(vector<int>& piles,int n,int speed){
             long long hours =0;
-            for(int i = 0; i < n; i++) {
-            hours += (piles[i] + speed - 1) / speed;
+            for(int i=0;i<n;i++){
+                hours = hours + piles[i] / speed;
+                if(piles[i]%speed!=0){
+                    hours++;
+                }
+            }return hours;
         }
-
-        return hours;
-    }
     int minEatingSpeed(vector<int>& piles, int h) {
         int n =piles.size();
          int low = 1;
