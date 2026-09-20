@@ -7,23 +7,23 @@ public:
         int high = position[n-1] - position[0];
         int result =0;
         while(low<=high){
-            int dist = (low+high)/2;
-            if(fun(position,n,m,dist)){
-                result =dist;
-                low =dist+1;
+            int guess = (low+high)/2;
+            if(fun(position,n,m,guess)){
+                result =guess;
+                low =guess+1;
             }
             else{
-                high =dist-1;
+                high =guess-1;
             }
         }return result;
         
     }
-    bool fun(vector<int>& position,int n, int m, int dist){
+    bool fun(vector<int>& position,int n, int m, int guess){
         int balls =1;
         int prevposition = position[0];
         for(int i=1;i<n;i++){
             int distance = position[i] - prevposition;
-            if(distance<dist){
+            if(distance<guess){
                 continue;
             }
             balls++;
