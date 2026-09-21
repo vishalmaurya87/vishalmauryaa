@@ -7,8 +7,8 @@ public:
         int result =-1;
         while(low<=high){
             int guess = (low+high)/2;
-            int min_divisor = fun(nums,n,guess);
-            if(min_divisor > threshold){
+            int sum = fun(nums,n,guess);
+            if(sum > threshold){
                 low = guess+1;
             }
             else{
