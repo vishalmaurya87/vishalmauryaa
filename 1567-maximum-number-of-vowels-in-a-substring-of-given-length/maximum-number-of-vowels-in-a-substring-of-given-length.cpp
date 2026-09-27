@@ -5,6 +5,9 @@ public:
         int count =0;
         int maxv =0;
         int i=0,j=0;
+        auto isVowel = [&](char c){
+            return c == 'a' || c=='e' || c == 'i' || c == 'o' || c == 'u';
+        };
         while(j<n){
             if(isVowel(s[j])){
                 count++;
@@ -21,8 +24,5 @@ public:
         }
         return maxv;
         
-    }
-    bool isVowel(char c){
-        return c == 'a' || c=='e' || c == 'i' || c == 'o' || c == 'u';
     }
 };
