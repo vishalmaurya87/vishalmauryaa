@@ -3,22 +3,18 @@ public:
     int lengthOfLongestSubstring(string s) {
         int n = s.length();
 
-        unordered_map<char, int> mp;
+        int freq[256] = {0};
 
-        int low = 0, high = 0;
+        int low = 0;
+        int high = 0;
         int result = 0;
 
         while (high < n) {
 
-            mp[s[high]]++;
+            freq[s[high]]++;
 
-            while (mp[s[high]] > 1) {
-                mp[s[low]]--;
-                
-                if (mp[s[low]] == 0) {
-                    mp.erase(s[low]);
-                }
-
+            while (freq[s[high]] > 1) {
+                freq[s[low]]--;
                 low++;
             }
 
